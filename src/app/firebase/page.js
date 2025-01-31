@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 // Dynamically import the component with no SSR
 const WebRTCComponent = dynamic(() => Promise.resolve(function WebRTCInner() {
@@ -217,6 +218,10 @@ const WebRTCComponent = dynamic(() => Promise.resolve(function WebRTCInner() {
   };
 
   return (
+    <>
+    <Link href = "/main">
+    <button className='fixed top-5 right-5 p-3 rounded-lg bg-black text-white font-dmSans font-bold hover:bg-gray-700'>Home</button>
+    </Link>
     <div className="flex flex-col items-center p-4">
       {error && (
         <div className="w-full max-w-md mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
@@ -265,10 +270,12 @@ const WebRTCComponent = dynamic(() => Promise.resolve(function WebRTCInner() {
         Answer
       </button>
     </div>
+    </>
   );
 }), { ssr: false });
 
 // Main component that renders the dynamic component
 export default function WebRTCPage() {
   return <WebRTCComponent />;
+  
 }

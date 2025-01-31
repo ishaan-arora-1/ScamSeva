@@ -23,7 +23,7 @@ const page = () => {
 
 
     <div className='w-screen z-20'>
-        <div className='fixed bottom-12 left-1/2 transform -translate-x-1/2'><ButtonContainer /></div>
+        {/* <div className='fixed bottom-12 left-1/2 transform -translate-x-1/2'><ButtonContainer /></div> */}
         <div className='w-screen h-20 flex justify-between mb-6'>
             <div className='text-white text-xl font-dmSans font-bold px-6 py-6'>ScamSeva</div>
             <Link href = "firebase">
