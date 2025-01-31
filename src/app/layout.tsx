@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Cinzel,DM_Sans, Quantico } from 'next/font/google';
+
+
+const cinzel = Cinzel({ subsets: ['latin'], weight: ['400', '900'], variable: '--font-cinzel' });
+const dmSans = DM_Sans({ subsets: ['latin'], weight: ['100', '400', '700', '900'], variable: '--font-dmsans' });
+const quantico = Quantico({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-quantico' });
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${cinzel.variable} ${dmSans.variable} ${quantico.variable}`}>
+      <body>
         {children}
       </body>
     </html>
